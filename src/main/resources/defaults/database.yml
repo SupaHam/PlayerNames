@@ -1,0 +1,15 @@
+# This configuration file contains all database info for the PlayerNames 
+# plugin created by SupaHam.
+
+database-type: mysql
+yaml:
+    auto-save: 600
+mysql:
+    ip: localhost
+    port: 3306
+    database: test
+    user: root
+    pass: ''
+    tables:
+        players: pn_players
+        player-names: pn_player_names
