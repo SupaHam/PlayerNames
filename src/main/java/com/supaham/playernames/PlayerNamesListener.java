@@ -41,7 +41,10 @@ public class PlayerNamesListener implements Listener {
             new BukkitRunnable() {
                 @Override
                 public void run() {
-                    ((MySQLDatabase) database).insertUUID(uuid);
+                    MySQLDatabase sql = (MySQLDatabase) database;
+                    if(sql.selectPlayerId(uuid) == null) {
+                        sql.insertUUID(uuid);
+                    }
                     database.insertName(uuid, name);
                 }
             }.runTaskAsynchronously(plugin);
